@@ -8,7 +8,7 @@ import time
 #setting up the screen
 screen = Screen()
 screen.setup(width=600, height=600) #screen size
-screen.bgcolor("grey") #screen background color
+screen.bgcolor("#16213e") #ocean dark blue background to match web version
 screen.title("Snake Game") #game title
 screen.tracer(0)#set tracer to 0 to turn pen off
 
@@ -26,7 +26,7 @@ screen.onkey(snake.right, "Right")
 game_is_on = True
 while game_is_on:
     screen.update() # update the screen once all the segments have moved forward
-    time.sleep(0.1) # delay after each segment has moved
+    time.sleep(0.08) # faster delay for smoother movement
     snake.move()
   
     #detect collision with food     
@@ -36,7 +36,7 @@ while game_is_on:
         snake.extend()
         
     #detect collision with the wall
-    if snake.head.xcor() > 280 or snake.head.xcor() <- 280 or snake.head.ycor() > 280 or snake.head.ycor() <- 285:
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_is_on = False
         scoreboard.game_over()
 

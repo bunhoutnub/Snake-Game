@@ -28,7 +28,11 @@ class Snake:
 
     def add_segment(self, position):
         new_segment = Turtle("square")
-        new_segment.color("black")
+        # Ocean-themed gradient colors - teal/green like web version
+        if len(self.segments) == 0:
+            new_segment.color("#4ecdc4")  # Head - bright teal
+        else:
+            new_segment.color("#2d8b75")  # Body - darker green
         new_segment.penup()
         new_segment.goto(position)
         self.segments.append(new_segment)
